@@ -1,7 +1,7 @@
 # Name: Password Generator
 
 ## Resources
-- [LIVE SITE](https://okdavekk.github.io/my-password-generator/)
+- [LIVE SITE](https://okdavekk.github.io/my-password-generator)
 
 - [REPOSITORY](https://github.com/okdavekk/my-password-generator)
 
