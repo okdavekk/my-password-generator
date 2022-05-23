@@ -1,9 +1,9 @@
 # Name: Password Generator
 
 ## Resources
-- [LIVE SITE](https://okdavekk.github.io/my-password-generator)
+- [LIVE SITE](https://github.com/okdavekk/my-password-generator)
 
-- [REPOSITORY](https://github.com/okdavekk/my-password-generator)
+- [REPOSITORY](https://okdavekk.github.io/my-password-generator/)
 
 ## Table of Contents
 - [Resources](#resources)
@@ -51,23 +51,15 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Visuals
 
-### Landing Page:
+### Landing Page
 ![Image](./assets/images/03-javascript-homework-demo.png)
 
-### After Button Click, Length Prompt:
+### After Button Click, Length Prompt
 ![Image](./assets/images/password-length-prompt.png)
 
-### Lowercase Letter prompt:
-![Image](./assets/images/lowercase-letter-prompt.png)
+###
 
-### Uppercase Letter Prompt:
-![Image](./assets/images/uppercase-letter-prompt.png)
 
-### Number Prompt:
-![Image](./assets/images/number-prompt.png)
-
-### Symbol Prompt:
-![Image](./assets/images/symbols-prompt.png)
 
 ## Authors and Acknowledgement
 

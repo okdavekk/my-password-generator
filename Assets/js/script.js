@@ -21,11 +21,17 @@ function generatePassword(){
   var passwordLength = parseInt(prompt ("Password Length.  Select 8 through 128 Characters")); 
   console.log(passwordLength)
   
-  if (passwordLength >= 8 && input <= 128){
-
+  if (passwordLength >= 8 && input <= 128) {
+    // alert("Please select a number between 8 and 128.");
+    // return init()
   } else {
     alert("Please select a number between 8 and 128.");
-  }
+
+  } 
+  
+
+}
+
   
 
   var lowercaseCheck = window.confirm ("Would you like lowercase characters?");
@@ -49,7 +55,6 @@ function generatePassword(){
   }
   if (numberCheck === true) {
     usableCharacters += NUMBER_CHARACTERS;
-  
   }
   if (symbolCheck === true) {
     usableCharacters += SYMBOL_CHARACTERS;
@@ -58,7 +63,7 @@ function generatePassword(){
 
 return "";
 
-}
+
 
 
 // Add event listener to generate button
