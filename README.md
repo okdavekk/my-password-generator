@@ -57,9 +57,17 @@ THEN the password is either displayed in an alert or written to the page
 ### After Button Click, Length Prompt:
 ![Image](./assets/images/password-length-prompt.png)
 
-### 
+### Lowercase Letter prompt:
+![Image](./assets/images/lowercase-letter-prompt.png)
 
+### Uppercase Letter Prompt:
+![Image](./assets/images/uppercase-letter-prompt.png)
 
+### Number Prompt:
+![Image](./assets/images/number-prompt.png)
+
+### Symbol Prompt:
+![Image](./assets/images/symbols-prompt.png)
 
 ## Authors and Acknowledgement
 
