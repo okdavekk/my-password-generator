@@ -21,11 +21,11 @@ function generatePassword(){
   var passwordLength = parseInt(prompt ("Password Length.  Select 8 through 128 Characters")); 
   console.log(passwordLength)
   
-  // if (passwordLength >= 8 && input <= 128){
+  if (passwordLength >= 8 && input <= 128){
 
-  // } else {
-  //   alert("Please select a number between 8 and 128.");
-  // }
+  } else {
+    alert("Please select a number between 8 and 128.");
+  }
   
 
   var lowercaseCheck = window.confirm ("Would you like lowercase characters?");
