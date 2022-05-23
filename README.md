@@ -51,13 +51,13 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Visuals
 
-### Landing Page
+### Landing Page:
 ![Image](./assets/images/03-javascript-homework-demo.png)
 
-### After Button Click, Length Prompt
+### After Button Click, Length Prompt:
 ![Image](./assets/images/password-length-prompt.png)
 
-###
+### 
 
 
 
