@@ -9,28 +9,78 @@ function writePassword() {
   passwordText.value = password;
 
 }
-function generatePassword(){
+//THE GENERATION OF THE PASSWORD CHARACTERS AND THE generatePassword function
+//THE GENERATION OF THE PASSWORD CHARACTERS AND THE generatePassword function
+//THE GENERATION OF THE PASSWORD CHARACTERS AND THE generatePassword function
+function generatePassword() {
   var LOWERCASE_CHARACTERS = "abcdefghijklmnopqrstuvwxyz";
   var UPPERCASE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var NUMBER_CHARACTERS = "1234567890"
   var SYMBOL_CHARACTERS = "!@#$%^&*(){}[]=<>/,.";
 
 
-  var passwordLength = window.prompt ("Password Length.  Select 8 through 128 Characters"); 
+
+
+
+  //VARIABLES AND WINDOWS
+  //VARIABLES AND WINDOWS
+  //VARIABLES AND WINDOWS
+
+  //passwordLength VARIABLE AND WINDOWS
+  var passwordLength = parseInt(prompt("Password Length.  Select 8 through 128 Characters"));
   console.log(passwordLength)
+  if (!passwordLength) {
+    alert("You must input a value from 8 through 128.  Start over");
+    return generatePassword();
+  }
+  if (passwordLength < 8) {
+    alert("You must select a number greater than or equal to 8.  Start over");
+    return generatePassword();
+  }
+  if (passwordLength > 128) {
+    alert("You must pick a number less than or equal to 128. Start over")
+    return generatePassword();
+  }
 
-  var lowercaseCheck = window.confirm ("Would you like lowercase characters?");
+  //lowercaseCheck VARIABLE AND WINDOWS
+  var lowercaseCheck = window.confirm("You must select that you want to include lowercase characters");
   console.log(lowercaseCheck)
+  if (!lowercaseCheck) {
+    alert("You must select that you want to include lowercase characters.  Start over")
+    return generatePassword();
+  }
 
-  var uppercaseCheck = window.confirm ("Would you like uppercase characters?");
+  //uppercaseCheck VARIABLE AND WINDOWS
+  var uppercaseCheck = window.confirm("You must select that you would like uppercase characters");
   console.log(uppercaseCheck)
+  if (!uppercaseCheck) {
+    alert("You must select that you would like uppercase characters.  Start over")
+    return generatePassword();
+  }
 
-  var numberCheck = window.confirm ("Would you like numbers in your password?");
+  //numberCheck VARIABLE AND WINDOWS
+  var numberCheck = window.confirm("You must select that you would like number characters");
   console.log(numberCheck)
+  if (!numberCheck) {
+    alert("You must select that you would like number characters. Start over")
+    return generatePassword();
+  }
 
-  var symbolCheck = window.confirm ("Would you like symbols in your password?");
+
+  //symbolCheck VARIABLE AND WINDOWS
+  var symbolCheck = window.confirm("You must select that you would like symbol characters");
   console.log(symbolCheck)
+  if (!symbolCheck) {
+    alert("You must select that you would like symbol characters.  Start over")
+    return generatePassword();
+  }
 
+
+
+
+  //AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //AGGREGATE OF CHARACTERS AFTER PROMPTS
   var usableCharacters = ""
   if (lowercaseCheck === true) {
     usableCharacters += LOWERCASE_CHARACTERS;
@@ -40,21 +90,32 @@ function generatePassword(){
   }
   if (numberCheck === true) {
     usableCharacters += NUMBER_CHARACTERS;
-  
   }
   if (symbolCheck === true) {
     usableCharacters += SYMBOL_CHARACTERS;
   }
-    console.log(usableCharacters)
+  console.log(usableCharacters)
+
+
+
+  //NEW FORMULA AFTER AGGREGATION
+  //NEW FORMULA AFTER AGGREGATION
+  //NEW FORMULA AFTER AGGREGATION
+  // var generatePassword = "";
+  // var characters = usableCharacters;
+  // var charactersLength = passwordLength;
+
+  // for (var i = 0; i < length; i++) {
+  //   result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  // }
+  // console.log(result);
+
 }
 
 
-
-
 // Add event listener to generate button
-
-// const element = document.getElementById("generate");
-
+// Add event listener to generate button
+// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 
@@ -65,70 +126,9 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-  
-//textarea id = "password"
-
-
-// button id = generate 
-
-// alert()
-// alert(message)
-
-// confirm(message)
-
-// prompt()
-// prompt(message)
-// prompt(message, default)
 
 
 
 
-
-
-
-// 
-// 
-// 
-// 
-// 
-//Code from this video https://www.youtube.com/watch?v=duNmhKgtcsI
-
-
-// Dom Elements
-// const resultPrompt = document.getElementById('result');
-// const lengthPrompt = document.getElementById('length');
-// const lowercasePrompt = document.getElementById('lowercase');
-// const uppercasePrompt = document.getElementById('uppercase');
-// const numericPromp = document.getElementById('numeric');const resultGenerate = document.getElementById('generate');
-
-// const randomFunc = {
-//   lower: getRandomLower,
-//   upper: getRandomUpper,
-//   number: getRandomNumber,
-//   symbol: getRandomSymbol
-// };
-
-// resultGenerate.addEventListener('click', () => {
-//   const length = lengthPrompt.value;
-//   const hasLower = lowercasePrompt.checked
-// }
-
-//Generator Functions
-// function getRandomLower() {
-//  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-// }
-
-// function getRandomUpper() {
-//   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-// }
-
-//  function getRandomNumber() {
-//   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-//  }
-
-//  function getRandomSymbol() {
-//   const symbols = '!@#$%^&*(){}[]=<>/,.';
-//   return symbols[Math.floor(Math.random() * symbols.length)];
-//  }
 
 
