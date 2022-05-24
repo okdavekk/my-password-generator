@@ -12,7 +12,7 @@ function writePassword() {
 //THE GENERATION OF THE PASSWORD CHARACTERS AND THE generatePassword function
 //THE GENERATION OF THE PASSWORD CHARACTERS AND THE generatePassword function
 //THE GENERATION OF THE PASSWORD CHARACTERS AND THE generatePassword function
-function generatePassword(){
+function generatePassword() {
   var LOWERCASE_CHARACTERS = "abcdefghijklmnopqrstuvwxyz";
   var UPPERCASE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var NUMBER_CHARACTERS = "1234567890"
@@ -22,47 +22,58 @@ function generatePassword(){
 
 
 
+  //VARIABLES AND WINDOWS
+  //VARIABLES AND WINDOWS
+  //VARIABLES AND WINDOWS
 
-//VARIABLES AND WINDOWS
-//VARIABLES AND WINDOWS
-//VARIABLES AND WINDOWS
-  
   //passwordLength VARIABLE AND WINDOWS
-  var passwordLength = parseInt(prompt ("Password Length.  Select 8 through 128 Characters")); 
-  console.log(passwordLength)
-  if (!passwordLength) {
-    alert("You must input a value from 8 through 128");
-  } 
-  if (passwordLength < 8) {
-    alert("You must select a number greater than or equal to 8");
+  function lengthReturn() {
+    var passwordLength = parseInt(prompt("Password Length.  Select 8 through 128 Characters"));
+    console.log(passwordLength)
+    if (!passwordLength) {
+      alert("You must input a value from 8 through 128");
+      return lengthReturn();
+    }
+    if (passwordLength < 8) {
+      alert("You must select a number greater than or equal to 8");
+      return lengthReturn();
+    }
+    if (passwordLength > 128) {
+      alert("You must pick a number less than or equal to 128")
+      return lengthReturn();
+    }
   }
-  if (passwordLength > 128) {
-    alert ("You must pick a number less than or equal to 128")
-  }
+  lengthReturn()
 
   //lowercaseCheck VARIABLE AND WINDOWS
-  var lowercaseCheck = window.confirm ("Would you like lowercase characters?");
-  console.log(lowercaseCheck)
-  if (!lowercaseCheck) {
-    alert("You must select that you want to include lowercase characters")
+  function variable() {
+    var lowercaseCheck = window.confirm("You must select that you want to include lowercase characters");
+    console.log(lowercaseCheck)
+    if (!lowercaseCheck) {
+      alert("You must select that you want to include lowercase characters")
+      return variable();
+    }
   }
+  variable()
+
+
 
   //uppercaseCheck VARIABLE AND WINDOWS
-  var uppercaseCheck = window.confirm ("Would you like uppercase characters?");
+  var uppercaseCheck = window.confirm("You must select that you would like uppercase characters");
   console.log(uppercaseCheck)
   if (!uppercaseCheck) {
     alert("You must select that you would like uppercase characters")
   }
 
   //numberCheck VARIABLE AND WINDOWS
-  var numberCheck = window.confirm ("Would you like numbers in your password?");
+  var numberCheck = window.confirm("You must select that you would like number characters");
   console.log(numberCheck)
   if (!numberCheck) {
     alert("You must select that you would like number characters")
   }
 
   //symbolCheck VARIABLE AND WINDOWS
-  var symbolCheck = window.confirm ("Would you like symbols in your password?");
+  var symbolCheck = window.confirm("You must select that you would like symbol characters");
   console.log(symbolCheck)
   if (!numberCheck) {
     alert("You must select that you would like symbol characters")
@@ -70,9 +81,9 @@ function generatePassword(){
 
 
 
-//AGGREGATE OF CHARACTERS AFTER PROMPTS
-//AGGREGATE OF CHARACTERS AFTER PROMPTS
-//AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //AGGREGATE OF CHARACTERS AFTER PROMPTS
   var usableCharacters = ""
   if (lowercaseCheck === true) {
     usableCharacters += LOWERCASE_CHARACTERS;
@@ -86,9 +97,9 @@ function generatePassword(){
   if (symbolCheck === true) {
     usableCharacters += SYMBOL_CHARACTERS;
   }
-    console.log(usableCharacters)
+  console.log(usableCharacters)
 
-return"";
+  return "";
 
 }
 
@@ -106,4 +117,4 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-  
+
