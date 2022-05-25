@@ -1,9 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// var theFinalString = document.getElementById("password");
-// theFinalString = document.getElementById("password").innerHTML
-
-var theFinalString;
 
 // Write password to the #password input
 function writePassword() {
@@ -20,12 +16,8 @@ function generatePassword() {
   var LOWERCASE_CHARACTERS = "abcdefghijklmnopqrstuvwxyz";
   var UPPERCASE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var NUMBER_CHARACTERS = "1234567890"
-  var SYMBOL_CHARACTERS = "!@#$%^&*(){}[]=<>/,.";
-  //I know I need this to work, but how?
-  var result = theFinalString;
-
-
-
+  var SYMBOL_CHARACTERS = "!@#$%^&*(){}[]=<>/,.";  
+  
 
   //START: VARIABLES AND WINDOWS
   //START: VARIABLES AND WINDOWS
@@ -111,11 +103,10 @@ function generatePassword() {
     theFinalString += randomCharacter;
   }
 
-
   return theFinalString;
 }
 
-//Generate password string function
+//Generate password string function.  I copied this below above in an 11th hr attempt to get the password to generate in the box and it did.  I want to thank Juan Santiago for helping me with this function below and tieing it to the above function, which led me to paste that function above.
 function generateString(passwordLength, usableCharactersArray) {
   var theFinalString = "";
   for (var i = 0; i < passwordLength; i++) {
@@ -124,7 +115,7 @@ function generateString(passwordLength, usableCharactersArray) {
     theFinalString += randomCharacter;
   }
 
-  //This is it but how to get it to display in the box? 
+  //Why is this different then the text box output?
   console.log(theFinalString);
 
 }
@@ -132,3 +123,6 @@ function generateString(passwordLength, usableCharactersArray) {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+//Wow what a hard one....
