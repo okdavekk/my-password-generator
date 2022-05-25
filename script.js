@@ -17,7 +17,7 @@ function generatePassword() {
   var UPPERCASE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var NUMBER_CHARACTERS = "1234567890"
   var SYMBOL_CHARACTERS = "!@#$%^&*(){}[]=<>/,.";
-  // var result = []
+  var result = []
 
 
 
@@ -42,6 +42,7 @@ function generatePassword() {
     return generatePassword();
   }
 
+
   //lowercaseCheck VARIABLE
   var lowercaseCheck = window.confirm("Press OK to add lowercase characters to your password.");
   console.log(lowercaseCheck)
@@ -58,10 +59,20 @@ function generatePassword() {
   var symbolCheck = window.confirm("Press OK to add symbol characters to your password.");
   console.log(symbolCheck)
 
+  //REPLAY IF ZERO VARIABLES ARE SELECTED (MINUS passwordLength)  
+  //REPLAY IF ZERO VARIABLES ARE SELECTED (MINUS passwordLength)  
+  //REPLAY IF ZERO VARIABLES ARE SELECTED (MINUS passwordLength)  
+  if (
+    !lowercaseCheck &&
+    !uppercaseCheck &&
+    !numberCheck &&
+    !symbolCheck) {
+    alert("Please select at least one character type.");
+    return generatePassword();
+  }
 
 
-
-
+  
   //AGGREGATE OF CHARACTERS AFTER PROMPTS
   //AGGREGATE OF CHARACTERS AFTER PROMPTS
   //AGGREGATE OF CHARACTERS AFTER PROMPTS
@@ -99,7 +110,7 @@ function generateString(passwordLength, usableCharactersArray) {
     result += randomCharacter;
   }
   console.log(result);
-  return result;  
+  // return "";  
 }
 
 
