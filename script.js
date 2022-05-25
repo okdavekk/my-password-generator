@@ -7,8 +7,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
+
 //THE GENERATION OF THE PASSWORD CHARACTERS AND THE generatePassword function
 //THE GENERATION OF THE PASSWORD CHARACTERS AND THE generatePassword function
 //THE GENERATION OF THE PASSWORD CHARACTERS AND THE generatePassword function
@@ -17,7 +17,7 @@ function generatePassword() {
   var UPPERCASE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var NUMBER_CHARACTERS = "1234567890"
   var SYMBOL_CHARACTERS = "!@#$%^&*(){}[]=<>/,.";
-  var result = []
+  // var result = []
 
 
 
@@ -46,16 +46,13 @@ function generatePassword() {
   var lowercaseCheck = window.confirm("Press OK to add lowercase characters to your password.");
   console.log(lowercaseCheck)
 
-
   //uppercaseCheck VARIABLE
   var uppercaseCheck = window.confirm("Press OK to add uppercase characters to your password.");
   console.log(uppercaseCheck)
- 
 
   //numberCheck VARIABLE
   var numberCheck = window.confirm("Press OK to add number characters to your password.");
   console.log(numberCheck)
-
 
   //symbolCheck VARIABLE
   var symbolCheck = window.confirm("Press OK to add symbol characters to your password.");
@@ -85,51 +82,24 @@ function generatePassword() {
 
 
 
-  //NEW FORMULA AFTER AGGREGATION
-  //NEW FORMULA AFTER AGGREGATION
-  //NEW FORMULA AFTER AGGREGATION
-
-  // function getRandomIndex(str) {
-  //   var randomIndex = Math.floor(Math.random() * str.length);
-  //   var randomCharacter = str[getRandomIndex];
-  //   // return randomCharacter;
-  //   console.log(randomCharacter);
-  // }
-
-
-  // TODO What I know is that I need to be able to make the password long enough to hold 128 characters (reusing some)
-
-  // TODO Need to work on below for statement to return a random set of characters from selections above and it includes at least one type of character selection and the selected character length
-
+  //ATTACHES TO FUNCTION BELOW
+  //ATTACHES TO FUNCTION BELOW
+  //ATTACHES TO FUNCTION BELOW
   var usableCharactersArray = usableCharacters.split("");
-
   generateString(passwordLength, usableCharactersArray);
-
-
-  // var generatePassword = "";
-  // // console.log(generatePassword);
-  // var characters = usableCharacters;
-  // // console.log(characters);
-  // // console.log(usableCharacters);
-  // var charactersLength = passwordLength;
-  // // console.log(passwordLength);
-  // // console.log(charactersLength);
 
 }
 
-
-
+//Generate password string function
 function generateString(passwordLength, usableCharactersArray) {
   var result = "";
-  // console.log(usableCharactersArray);
   for (var i = 0; i < passwordLength; i++) {
-    // result += characters[i].charAt(Math.floor(Math.random() * charactersLength));
-    var randomIndex = Math.floor(Math.random()* usableCharactersArray.length);
+    var randomIndex = Math.floor(Math.random() * usableCharactersArray.length);
     var randomCharacter = usableCharactersArray[randomIndex];
     result += randomCharacter;
   }
   console.log(result);
-  return result;
+  return result;  
 }
 
 
