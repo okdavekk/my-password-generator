@@ -1,5 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+// var theFinalString = document.getElementById("password");
+// theFinalString = document.getElementById("password").innerHTML
+
+var theFinalString;
 
 // Write password to the #password input
 function writePassword() {
@@ -17,14 +21,15 @@ function generatePassword() {
   var UPPERCASE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var NUMBER_CHARACTERS = "1234567890"
   var SYMBOL_CHARACTERS = "!@#$%^&*(){}[]=<>/,.";
-  var result = []
+  //I know I need this to work, but how?
+  var result = theFinalString;
 
 
 
 
-  //VARIABLES AND WINDOWS
-  //VARIABLES AND WINDOWS
-  //VARIABLES AND WINDOWS
+  //START: VARIABLES AND WINDOWS
+  //START: VARIABLES AND WINDOWS
+  //START: VARIABLES AND WINDOWS
 
   //passwordLength VARIABLE AND WINDOWS
   var passwordLength = parseInt(prompt("Password Length.  Select 8 through 128 Characters"));
@@ -41,7 +46,6 @@ function generatePassword() {
     alert("You must pick a number less than or equal to 128. Start over")
     return generatePassword();
   }
-
 
   //lowercaseCheck VARIABLE
   var lowercaseCheck = window.confirm("Press OK to add lowercase characters to your password.");
@@ -60,8 +64,6 @@ function generatePassword() {
   console.log(symbolCheck)
 
   //REPLAY IF ZERO VARIABLES ARE SELECTED (MINUS passwordLength)  
-  //REPLAY IF ZERO VARIABLES ARE SELECTED (MINUS passwordLength)  
-  //REPLAY IF ZERO VARIABLES ARE SELECTED (MINUS passwordLength)  
   if (
     !lowercaseCheck &&
     !uppercaseCheck &&
@@ -70,12 +72,14 @@ function generatePassword() {
     alert("Please select at least one character type.");
     return generatePassword();
   }
+  //END: VARIABLES AND WINDOW
+  //END: VARIABLES AND WINDOW
+  //END: VARIABLES AND WINDOW
 
 
-  
-  //AGGREGATE OF CHARACTERS AFTER PROMPTS
-  //AGGREGATE OF CHARACTERS AFTER PROMPTS
-  //AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //START: AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //START: AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //START: AGGREGATE OF CHARACTERS AFTER PROMPTS
   var usableCharacters = ""
   if (lowercaseCheck === true) {
     usableCharacters += LOWERCASE_CHARACTERS;
@@ -90,46 +94,41 @@ function generatePassword() {
     usableCharacters += SYMBOL_CHARACTERS;
   }
   console.log(usableCharacters);
-
+  //END: AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //END: AGGREGATE OF CHARACTERS AFTER PROMPTS
+  //END: AGGREGATE OF CHARACTERS AFTER PROMPTS
 
 
   //ATTACHES TO FUNCTION BELOW
-  //ATTACHES TO FUNCTION BELOW
-  //ATTACHES TO FUNCTION BELOW
+  // var theFinalString = document.getElementById("password");
   var usableCharactersArray = usableCharacters.split("");
   generateString(passwordLength, usableCharactersArray);
 
+  var theFinalString = "";
+  for (var i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * usableCharactersArray.length);
+    var randomCharacter = usableCharactersArray[randomIndex];
+    theFinalString += randomCharacter;
+  }
+
+
+  return theFinalString;
 }
 
 //Generate password string function
 function generateString(passwordLength, usableCharactersArray) {
-  var result = "";
+  var theFinalString = "";
   for (var i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * usableCharactersArray.length);
     var randomCharacter = usableCharactersArray[randomIndex];
-    result += randomCharacter;
+    theFinalString += randomCharacter;
   }
-  console.log(result);
-  // return "";  
+
+  //This is it but how to get it to display in the box? 
+  console.log(theFinalString);
+
 }
 
 
 // Add event listener to generate button
-// Add event listener to generate button
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
