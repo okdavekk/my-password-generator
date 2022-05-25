@@ -17,7 +17,7 @@ function generatePassword() {
   var UPPERCASE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var NUMBER_CHARACTERS = "1234567890"
   var SYMBOL_CHARACTERS = "!@#$%^&*(){}[]=<>/,.";
-
+  var result = []
 
 
 
@@ -42,38 +42,25 @@ function generatePassword() {
     return generatePassword();
   }
 
-  //lowercaseCheck VARIABLE AND WINDOWS
-  var lowercaseCheck = window.confirm("You must select that you want to include lowercase characters");
+  //lowercaseCheck VARIABLE
+  var lowercaseCheck = window.confirm("Press OK to add lowercase characters to your password.");
   console.log(lowercaseCheck)
-  if (!lowercaseCheck) {
-    alert("You must select that you want to include lowercase characters.  Start over")
-    return generatePassword();
-  }
 
-  //uppercaseCheck VARIABLE AND WINDOWS
-  var uppercaseCheck = window.confirm("You must select that you would like uppercase characters");
+
+  //uppercaseCheck VARIABLE
+  var uppercaseCheck = window.confirm("Press OK to add uppercase characters to your password.");
   console.log(uppercaseCheck)
-  if (!uppercaseCheck) {
-    alert("You must select that you would like uppercase characters.  Start over")
-    return generatePassword();
-  }
+ 
 
-  //numberCheck VARIABLE AND WINDOWS
-  var numberCheck = window.confirm("You must select that you would like number characters");
+  //numberCheck VARIABLE
+  var numberCheck = window.confirm("Press OK to add number characters to your password.");
   console.log(numberCheck)
-  if (!numberCheck) {
-    alert("You must select that you would like number characters. Start over")
-    return generatePassword();
-  }
 
 
-  //symbolCheck VARIABLE AND WINDOWS
-  var symbolCheck = window.confirm("You must select that you would like symbol characters");
+  //symbolCheck VARIABLE
+  var symbolCheck = window.confirm("Press OK to add symbol characters to your password.");
   console.log(symbolCheck)
-  if (!symbolCheck) {
-    alert("You must select that you would like symbol characters.  Start over")
-    return generatePassword();
-  }
+
 
 
 
@@ -94,22 +81,55 @@ function generatePassword() {
   if (symbolCheck === true) {
     usableCharacters += SYMBOL_CHARACTERS;
   }
-  console.log(usableCharacters)
+  console.log(usableCharacters);
 
 
 
   //NEW FORMULA AFTER AGGREGATION
   //NEW FORMULA AFTER AGGREGATION
   //NEW FORMULA AFTER AGGREGATION
-  // var generatePassword = "";
-  // var characters = usableCharacters;
-  // var charactersLength = passwordLength;
 
-  // for (var i = 0; i < length; i++) {
-  //   result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  // function getRandomIndex(str) {
+  //   var randomIndex = Math.floor(Math.random() * str.length);
+  //   var randomCharacter = str[getRandomIndex];
+  //   // return randomCharacter;
+  //   console.log(randomCharacter);
   // }
-  // console.log(result);
 
+
+  // TODO What I know is that I need to be able to make the password long enough to hold 128 characters (reusing some)
+
+  // TODO Need to work on below for statement to return a random set of characters from selections above and it includes at least one type of character selection and the selected character length
+
+  var usableCharactersArray = usableCharacters.split("");
+
+  generateString(passwordLength, usableCharactersArray);
+
+
+  // var generatePassword = "";
+  // // console.log(generatePassword);
+  // var characters = usableCharacters;
+  // // console.log(characters);
+  // // console.log(usableCharacters);
+  // var charactersLength = passwordLength;
+  // // console.log(passwordLength);
+  // // console.log(charactersLength);
+
+}
+
+
+
+function generateString(passwordLength, usableCharactersArray) {
+  var result = "";
+  // console.log(usableCharactersArray);
+  for (var i = 0; i < passwordLength; i++) {
+    // result += characters[i].charAt(Math.floor(Math.random() * charactersLength));
+    var randomIndex = Math.floor(Math.random()* usableCharactersArray.length);
+    var randomCharacter = usableCharactersArray[randomIndex];
+    result += randomCharacter;
+  }
+  console.log(result);
+  return result;
 }
 
 
